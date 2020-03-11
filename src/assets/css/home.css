@@ -1,5 +1,5 @@
 body {
-	background:#fff;
+	background:rgba(231, 229, 229, 0.753);
 }
 
 a.border.nav-link.border-light.rounded.mr-1 {
@@ -23,7 +23,6 @@ a.border.nav-link.border-light.rounded.mr-1:hover {
 }
 .sectionPage {
   position: relative;
-  /* top: -15px; */
   margin-bottom: -125px;
 }
 
@@ -32,7 +31,7 @@ a.border.nav-link.border-light.rounded.mr-1:hover {
   height: 100%;
   width: 100%;
   position: absolute;
-  background: url('https://mdbootstrap.com/wp-content/uploads/2016/12/big-bundle1.jpg');
+  background: url("../images/bay.png");
   background-position: center center;
   background-size: cover;
   filter: opacity(.1);

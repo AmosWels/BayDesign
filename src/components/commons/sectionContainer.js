@@ -1,11 +1,13 @@
 import React from "react";
 import { MDBContainer } from "mdbreact";
 import classNames from "classnames";
+import { lightgrey } from "color-name";
+import "../../assets/css/main.css"
 
 let SectionContainer = ({
   children,
   className,
-  dark,
+  lightgrey,
   description,
   header,
   noBorder,
@@ -20,9 +22,9 @@ let SectionContainer = ({
     "section",
     !noBottom && "mb-5",
     !noBorder ? "border p-3" : "px-0",
-    dark && "grey darken-3",
-    flexCenter && "d-flex justify-content align-items-center",
-    flexCenterVert && "d-flex align-items-center",
+    lightgrey && "grey lighten-3",
+    flexCenter && "d-flex justify-content align-items-left",
+    flexCenterVert && "d-flex align-items-left",
     flexColumn && "flex-column",
     className
   );
@@ -35,7 +37,7 @@ let SectionContainer = ({
     <>
       {title}
       {header}
-      <MDBContainer fluid className={classes} style={style}>
+      <MDBContainer fluid className={classes} cardpositon style={style}>
         {description}
         {children}
       </MDBContainer>
