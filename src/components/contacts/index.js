@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer } from "mdbreact";
+import AllContacts from "./allContacts";
 
 export class Contacts extends Component {
   state = {};
@@ -7,6 +8,7 @@ export class Contacts extends Component {
     return (
       <div>
         <MDBContainer fluid>Welcome to Contacts</MDBContainer>
+        <AllContacts />
       </div>
     );
   }

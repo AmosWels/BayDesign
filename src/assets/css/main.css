@@ -1,3 +1,33 @@
-.navbar{
-    color: '#e91e63';
+.navbar {
+  color: "#e91e63";
+}
+.cardpositon {
+  width: 100%;
+}
+.col {
+  padding: 1rem;
+  background-color: #33b5e5;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+}
+.sectionPage {
+  position: relative;
+  margin-bottom: -125px;
+}
+
+.container {
+
+  width: 100%;
+}
+
+.sectionPage::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("../images/bay.png");
+  background-position: center center;
+  background-size: cover;
+  filter: opacity(0.1);
 }
