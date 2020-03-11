@@ -7,8 +7,10 @@ export class Contacts extends Component {
   render() {
     return (
       <div>
-        <MDBContainer fluid>Welcome to Contacts</MDBContainer>
-        <AllContacts />
+      <MDBContainer></MDBContainer>
+        <MDBContainer fluid>
+          <AllContacts />
+        </MDBContainer>
       </div>
     );
   }
