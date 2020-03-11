@@ -13,9 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <MDBRow>
-          
-      </MDBRow>
       <Switch>
         <Route exact path={ROUTES.home} component={Home} />
         <Route exact path={ROUTES.tasks} component={Tasks} />

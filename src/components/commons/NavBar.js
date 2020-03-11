@@ -14,7 +14,7 @@ toggleCollapse = () => {
 }
 
 render() {
-  const bgPink = {backgroundColor: '#e91e63'}
+  const bgPink = {backgroundColor: '#8B008B'}
   return (
     <Router>
       <MDBNavbar style={bgPink} dark expand="md">
