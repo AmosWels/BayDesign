@@ -55,6 +55,12 @@
     font-size: 15px;
     font-weight: 300;
 }
+.import-angle{
+    padding: 0.6rem 0 0 1rem;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0px 20px 0px 0px
+}
 
 .dateCreated{
     padding: 0.6rem 0 0 1rem;
@@ -62,7 +68,11 @@
     font-weight: 400;
 }
 
-.import{
+#color-import{
     color: purple;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.fa-sync:before {
+    color:cornflowerblue;
 }

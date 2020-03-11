@@ -15,9 +15,7 @@ import {
   MDBDropdownToggle,
   MDBIcon,
   MDBBtn,
-  MDBDropdown
 } from "mdbreact";
-import SectionContainer from "../commons/sectionContainer";
 import CardList from "../commons/cardList";
 import data_collspan from "../fixtures/table";
 import "../../assets/css/main.css";
@@ -53,14 +51,19 @@ export class AllContacts extends Component {
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
-              <span className="import mb-5">Import</span> | 
-              <MDBDropdownToggle outline  color="grey lighten-1" className="h-100">
-                Action <MDBIcon icon="angle-down" className="mr-1" />
-              </MDBDropdownToggle>
-                <MDBBtn
-                  className=""
-                  color="deep-orange"
+              <MDBIcon icon="sync"></MDBIcon>
+                <span className="import-angle">
+                  Bulk Action <MDBIcon icon="angle-down"></MDBIcon>
+                </span>{"      "}
+                |<span className="import-angle mb-5" id="color-import">Import</span>
+                <MDBDropdownToggle
+                  outline
+                  color="grey lighten-1"
+                  className="h-100 "
                 >
+                  Action <MDBIcon icon="angle-down" className="mr-1" />
+                </MDBDropdownToggle>
+                <MDBBtn className="" color="deep-orange">
                   Create New
                 </MDBBtn>
               </MDBNavItem>
@@ -71,10 +74,7 @@ export class AllContacts extends Component {
               <MDBCard>
                 <MDBCardBody>
                   <MDBTable bordered>
-                    <MDBTableHead
-                      columns={data_collspan.columns}
-                      textblack
-                    />
+                    <MDBTableHead columns={data_collspan.columns} textblack />
                     <MDBTableBody rows={data_collspan.rows} />
                   </MDBTable>
                 </MDBCardBody>

@@ -7,7 +7,6 @@ import Deals from './components/deals';
 import Contacts from './components/contacts';
 import Sales from "./components/sales";
 import { Navbar } from "./components/commons/NavBar";
-import {MDBRow} from "mdbreact";
 
 function App() {
   return (
