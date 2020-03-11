@@ -7,11 +7,15 @@ import Deals from './components/deals';
 import Contacts from './components/contacts';
 import Sales from "./components/sales";
 import { Navbar } from "./components/commons/NavBar";
+import {MDBRow} from "mdbreact";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <MDBRow>
+          
+      </MDBRow>
       <Switch>
         <Route exact path={ROUTES.home} component={Home} />
         <Route exact path={ROUTES.tasks} component={Tasks} />

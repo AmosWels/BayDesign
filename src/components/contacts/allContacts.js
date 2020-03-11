@@ -2,21 +2,15 @@ import React, { Component } from "react";
 import {
   MDBCol,
   MDBRow,
-  MDBContainer,
   MDBCard,
   MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
   MDBTable,
   MDBTableBody,
   MDBTableHead,
-  MDBEdgeHeader,
-  MDBJumbotron,
-  MDBIcon,
-  MDBAnimation
+  MDBBtn
 } from "mdbreact";
 import SectionContainer from "../commons/sectionContainer";
-import MenuLink from "../commons/menuLink";
+import CardList from "../commons/cardList";
 import data_collspan from "../fixtures/table";
 import "../../assets/css/main.css";
 
@@ -27,14 +21,14 @@ export class AllContacts extends Component {
       <>
         <div className="container">
           <MDBRow>
-            <MDBCol size="8">
+            <MDBCol size="8" className="my-5">
               <MDBCard>
                 <MDBCardBody>
                   <MDBTable bordered>
                     <MDBTableHead
                       columns={data_collspan.columns}
                       // color="primary-color"
-                      textBlack
+                      textblack
                     />
                     <MDBTableBody rows={data_collspan.rows} />
                   </MDBTable>
@@ -42,27 +36,12 @@ export class AllContacts extends Component {
               </MDBCard>
               {/* </SectionContainer> */}
             </MDBCol>
-            <MDBCol size="4">
-              {/* <MDBEdgeHeader color="indigo darken-3" className="sectionPage" /> */}
-              {/* <MDBAnimation type="zoomIn" duration="500ms"> */}
-              {/* <MDBRow> */}
-              {/* <MDBCol className="mt-3 mx-auto"> */}
-              {/* <MDBJumbotron> */}
-              <MDBCard>
-                <MDBCardBody>
-                  <ul className="list-unstyled example-components-list">
-                    <MenuLink to="#" title="Forms" />
-                    <MenuLink to="#" title="Input" />
-                    <MenuLink to="#" title="Input" />
-                    <MenuLink to="#" title="Input" />
-                  </ul>
-                </MDBCardBody>
-              </MDBCard>
-              {/* </MDBJumbotron> */}
-              {/* </MDBCol> */}
-              {/* </MDBRow> */}
-              {/* </MDBAnimation> */}
-              {/* </SectionContainer> */}
+            <MDBCol size="4" className="my-5">
+              <CardList />
+                <MDBBtn color="primary">Save</MDBBtn>
+                <MDBBtn outline color="primary">
+                  Cancel
+                </MDBBtn>
             </MDBCol>
           </MDBRow>
         </div>
