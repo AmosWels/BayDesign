@@ -1,13 +1,32 @@
 import React, { Component } from "react";
-import { MDBContainer } from "mdbreact";
+import SectionContainer from "../commons/sectionContainer";
 
 export class Deals extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <MDBContainer fluid>Welcome to Deals</MDBContainer>
-      </div>
+      <SectionContainer header="Deals Will be up soon">
+        <div className="my-5 d-flex justify-content-around">
+          <div className="spinner-grow text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          <div className="spinner-grow text-secondary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          <div className="spinner-grow text-success" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          <div className="spinner-grow text-danger" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          <div className="spinner-grow text-warning" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+          <div className="spinner-grow text-info" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      </SectionContainer>
     );
   }
 }

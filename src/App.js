@@ -5,6 +5,7 @@ import { Home } from "./components/home";
 import Tasks from './components/tasks';
 import Deals from './components/deals';
 import Contacts from './components/contacts';
+import ContactDetails from './components/contacts/contactDetails';
 import Sales from "./components/sales";
 import { Navbar } from "./components/commons/NavBar";
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path={ROUTES.sales} component={Sales} />
         <Route exact path={ROUTES.deals} component={Deals} />
         <Route exact path={ROUTES.contacts} component={Contacts} />
+        <Route exact path={ROUTES.contactDetails} component={ContactDetails} />
         <Route exact path={ROUTES.home} component={Home} />
       </Switch>
     </BrowserRouter>

@@ -20,9 +20,10 @@ import ROUTES from "../../utils/index";
 export class Home extends Component {
   state = {};
   render() {
+    const bgPurple = {backgroundColor: '#8B008B'}
     return (
       <>
-        <MDBEdgeHeader color="indigo darken-3" className="sectionPage" />
+        <MDBEdgeHeader style={bgPurple} className="sectionPage" />
         <div className="mt-3 mb-5">
           <MDBFreeBird>
             <MDBRow>

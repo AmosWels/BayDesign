@@ -1,7 +1,6 @@
 import React from "react";
 import { MDBContainer } from "mdbreact";
 import classNames from "classnames";
-import { lightgrey } from "color-name";
 import "../../assets/css/main.css"
 
 let SectionContainer = ({
