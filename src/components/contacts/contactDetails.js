@@ -14,6 +14,7 @@ import {
   MDBBtn,
   MDBBadge
 } from "mdbreact";
+import ROUTES from "../../utils"
 import "../../assets/css/main.css";
 import CardDetailList from "../commons/cardDetailList";
 import SectionContainer from "../commons/sectionContainer";
@@ -35,10 +36,10 @@ export class ContactDetails extends Component {
             <MDBNavbarNav left>
               <MDBBreadcrumb>
                 <MDBBreadcrumbItem>
-                  <MDBIcon
+                  <a href={ROUTES.contacts}><MDBIcon
                     icon="long-arrow-alt-left"
                     className="detailIcon"
-                  ></MDBIcon>{" "}
+                  ></MDBIcon></a>{" "}
                   |<span className="contact-detail">Contacts Details</span>
                 </MDBBreadcrumbItem>
               </MDBBreadcrumb>
