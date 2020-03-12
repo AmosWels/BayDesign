@@ -1,16 +1,19 @@
 import React from "react";
+import ROUTES from "../../utils/index";
+import { MDBIcon } from "mdbreact";
+// import history from "../../utils/history"
 
+// function testClickEvent() {
+//   console.log("param");
+//   history.push(ROUTES.contactDetails)
+//   // this.props.history.push(ROUTES.contactDetails);
+// }
 const data_collspan = {
   columns: [
     {
       field: "[]",
       sort: "head",
       label: [<input type="checkbox" />]
-    },
-    {
-      field: "location",
-      sort: "asc",
-      label: "Location"
     },
     {
       label: "Basic Info",
@@ -23,32 +26,45 @@ const data_collspan = {
       sort: "asc"
     },
     {
+      field: "location",
+      sort: "asc",
+      label: "Location"
+    },
+    {
       label: "Status",
       field: "handle",
       sort: "status"
+    },
+    {
+      label: "View",
+      field: "handle",
+      sort: "View"
     }
   ],
   rows: [
     {
       firstm: [<input type="checkbox" />],
-      first: "Mark",
-      last: "Otto",
-      handle: "@mdo",
-      status: "confirmed"
+      last: [<MDBIcon icon="male"></MDBIcon>, " Otto James, Otto@gmail.com"],
+      handle: "02/01/2020, 06:50",
+      first: "Uganda",
+      status: "confirmed",
+      view: [<a href={ROUTES.contactDetails}><MDBIcon icon="eye"></MDBIcon></a>]
     },
     {
       firstm: [<input type="checkbox" />],
-      first: "Jacob",
-      last: "Thornton",
-      handle: "@fat",
-      status: "confirmed"
+      last: [<MDBIcon icon="female"></MDBIcon>," Miriam Nakiwuge, miriam@gmail.com"],
+      handle: "02/02/2020, 05:50",
+      first: "Uganda",
+      status: "confirmed",
+      view: [<a href={ROUTES.contactDetails}><MDBIcon icon="eye"></MDBIcon></a>]
     },
     {
       firstm: <input type="checkbox" />,
-      first: "Larry the Bird",
-      last: "Thornton",
-      handle: "@twitter",
-      status: "confirmed" 
+      last: [<MDBIcon icon="male"></MDBIcon>," Owor Yoakim, owor@gmail.com"],
+      handle: "02/05/2020, 02:50",
+      first: "Kenya",
+      status: "confirmed",
+      view: [<a href={ROUTES.contactDetails}><MDBIcon icon="eye"></MDBIcon></a>]
     }
   ]
 };

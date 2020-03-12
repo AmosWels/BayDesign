@@ -73,7 +73,7 @@ export class AllContacts extends Component {
             <MDBCol size="8" className="my-4">
               <MDBCard>
                 <MDBCardBody>
-                  <MDBTable bordered>
+                  <MDBTable bordered hover>
                     <MDBTableHead columns={data_collspan.columns} textblack />
                     <MDBTableBody rows={data_collspan.rows} />
                   </MDBTable>

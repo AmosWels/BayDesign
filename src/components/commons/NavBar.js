@@ -14,10 +14,10 @@ toggleCollapse = () => {
 }
 
 render() {
-  const bgPink = {backgroundColor: '#8B008B'}
+  const bgPurple = {backgroundColor: '#8B008B'}
   return (
     <Router>
-      <MDBNavbar style={bgPink} dark expand="md">
+      <MDBNavbar style={bgPurple} dark expand="md">
         <MDBNavbarBrand>
           <a href={ROUTES.home}><strong className="white-text">BayDesign</strong></a>
         </MDBNavbarBrand>
@@ -41,7 +41,7 @@ render() {
                 <MDBDropdownMenu className="dropdown-default">
                   <MDBDropdownItem href="#!"></MDBDropdownItem>
                   <MDBDropdownItem href={ROUTES.contacts}>All contacts</MDBDropdownItem>
-                  <MDBDropdownItem href="#!">New Contacts</MDBDropdownItem>
+                  <MDBDropdownItem href={ROUTES.contactDetails}>Specific Contact</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Closed Business</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
