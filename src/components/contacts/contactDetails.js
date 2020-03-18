@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import {
   MDBCol,
   MDBRow,
   MDBCard,
   MDBCardBody,
-  MDBCardTitle,
   MDBCardText,
   MDBBreadcrumb,
   MDBBreadcrumbItem,
@@ -17,20 +17,18 @@ import {
 import ROUTES from "../../utils"
 import "../../assets/css/main.css";
 import CardDetailList from "../commons/cardDetailList";
-import SectionContainer from "../commons/sectionContainer";
 import DetailTabs from "../commons/contactDetailTabs";
 
-export class ContactDetails extends Component {
-  state = {};
-  render() {
+export const ContactDetails = (props)=> {
+    const {data} = props.location && props.location.state;
     return (
       <>
         <div className="container">
           <MDBNavbar
             size="12"
-            className="my-4 mx-0"
+            className="my-2 mx-0"
             color="secondary"
-            style={{ marginTop: "20px" }}
+            style={{ marginTop: "15px" }}
             dark
           >
             <MDBNavbarNav left>
@@ -45,59 +43,60 @@ export class ContactDetails extends Component {
               </MDBBreadcrumb>
             </MDBNavbarNav>
           </MDBNavbar>
-          <MDBRow>
-            <MDBCol size="4" className="my-4">
+          <MDBRow className="my-2">
+            <MDBCol size="3">
               <MDBCard>
-                <MDBCardTitle>
+                <MDBRow className="text-center mx-2 my-3">
                   <MDBIcon icon="pen" className="carddetailIcon"></MDBIcon>
                   <MDBIcon icon="trash" className="carddetailIcon"></MDBIcon>
                   <MDBIcon
                     icon="ellipsis-v"
                     className="carddetailIcon"
                   ></MDBIcon>
-                </MDBCardTitle>
-                <CardDetailList />
+                </MDBRow>
+                <CardDetailList contactData={data} />
                 <MDBCardText></MDBCardText>
-                <SectionContainer className="text-center" header="">
+              </MDBCard>
+                <MDBRow className="text-center mx-2 my-3">
                   <MDBIcon
                     icon="envelope"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
                   <MDBIcon
                     icon="dollar-sign"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
                   <MDBIcon
                     icon="calendar-check"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
                   <MDBIcon
                     icon="comment-alt"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
                   <MDBIcon
                     icon="calendar-day"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
                   <MDBIcon
                     icon="paper-plane"
-                    className="carddetailIconBottom"
+                    className="carddetailIconBottom icon-detail-color"
                   ></MDBIcon>
-                </SectionContainer>
-              </MDBCard>
-              <MDBCard className="my-1">
+                </MDBRow>
+              <MDBCard>
                 <MDBCardBody>
-                  <h5>
+                <span className="contactinfo ml-3">Owner</span>
+                  <h6>
                     <MDBIcon
-                      icon="address-book"
-                      style={{ color: "red" }}
+                      icon="circle"
+                      style={{ color: "purple" }}
                       className="carddetailIconBottom"
                     ></MDBIcon>
-                    SEKAMANYA Gilbert Francis
-                  </h5>
+                    {data.first_name} {data.last_name}
+                  </h6>
                   <MDBCardText>
-                    <p class="text-center">
-                      <MDBBtn outline color="warning">
+                    <p className="text-center display-flex" >
+                      <MDBBtn outline className="button-toggle">
                         Show Gadgets
                       </MDBBtn>
                     </p>
@@ -105,23 +104,33 @@ export class ContactDetails extends Component {
                     <span className="contactinfo">Email Address</span>
                     <br />
                     <span style={{ color: "black" }}>
-                      ronald.adonyo@gmail.com
+                      {data.email} <MDBIcon icon="envelope"></MDBIcon>
                     </span>
-                    <br />
+                    <br /><br/>
                     <span className="contactinfo">Phone Number</span>
                     <br />
-                    <a href="#!">256752596196</a>
+                    <a href="#!">{data.phone_number}</a><br/>
+                    <MDBBadge className="mr-2 mt-2 pa-4" pill color="light">
+                      <a href="!">
+                        <MDBIcon style={{color:"purple"}} icon="phone-square-alt"> Call</MDBIcon>
+                      </a>
+                    </MDBBadge><br/>
                     <br />
-                    <MDBBadge className="mr-2 mt-2" pill color="light">
-                      <span>
-                        <MDBIcon icon="phone-square-alt">Call</MDBIcon>
-                      </span>
-                    </MDBBadge>
+                    <span className="contactinfo">Address</span>
+                    <br />
+                    <span style={{ color: "black" }}>
+                      {data.address}
+                    </span>
+                    <hr/>
+                    <span style={{ color: "black" }}>
+                      Other Information <br/>
+                      {data.contact_type.name}
+                    </span>
                   </MDBCardText>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
-            <MDBCol size="8" className="my-4 mx-8">
+            <MDBCol size="9">
               <MDBCard>
                 <MDBCardBody>
                   <DetailTabs />
@@ -132,7 +141,13 @@ export class ContactDetails extends Component {
         </div>
       </>
     );
-  }
+}
+ContactDetails.propTypes = {
+  data: PropTypes.object,
+};
+
+ContactDetails.defaultProps ={
+  data:[]
 }
 
 export default ContactDetails;

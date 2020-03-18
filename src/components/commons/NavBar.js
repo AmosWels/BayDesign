@@ -14,7 +14,7 @@ toggleCollapse = () => {
 }
 
 render() {
-  const bgPurple = {backgroundColor: '#8B008B'}
+  const bgPurple = {backgroundColor: '#6B488C'}
   return (
     <Router>
       <MDBNavbar style={bgPurple} dark expand="md">
@@ -24,25 +24,36 @@ render() {
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
-            <MDBNavItem>
-              <MDBNavLink to={ROUTES.sales}>Sales</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to={ROUTES.deals}>Deals</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to={ROUTES.tasks}>Tasks</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
+          <MDBNavItem>
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
                   <div className="d-none d-md-inline">Contacts</div>
                 </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-default">
+                <MDBDropdownMenu className="dropdown-default mt-2">
                   <MDBDropdownItem href="#!"></MDBDropdownItem>
                   <MDBDropdownItem href={ROUTES.contacts}>All contacts</MDBDropdownItem>
-                  <MDBDropdownItem href={ROUTES.contactDetails}>Specific Contact</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Closed Business</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ROUTES.sales}>Forms</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ROUTES.deals}>Landing Pages</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={ROUTES.tasks}>Templates</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <div className="d-none d-md-inline">Campaigns</div>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu className="dropdown-default mt-2">
+                  <MDBDropdownItem href=""></MDBDropdownItem>
+                  <MDBDropdownItem href="">Email Broadcasts</MDBDropdownItem>
+                  <MDBDropdownItem href="">Sms Broadcasts</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>

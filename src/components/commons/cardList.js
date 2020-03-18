@@ -9,11 +9,11 @@ import "../../assets/css/main.css";
 const CardList = ({ title }) => {
   return (
     <>
-    <MDBListGroup style={{ width: "22rem" }}>
-      <MDBListGroupItem color="secondary">
+    <MDBListGroup style={{ width: "20rem" }}>
+      <MDBListGroupItem className="list-head">
         All Contacts
       </MDBListGroupItem>
-      <MDBListGroupItem style={{backgroundcolor: "#e4e4e438"}}>
+      <MDBListGroupItem>
         <p>All saved filters <MDBIcon icon="wifi"></MDBIcon></p>
         <p>Meet all the following conditions</p>
         <p>Owner is SEKAMANYE Gilbert Francis <br/>james@connel@gmail.com </p>

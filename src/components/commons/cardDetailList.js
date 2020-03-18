@@ -7,38 +7,34 @@ import {
 } from "mdbreact";
 import "../../assets/css/main.css";
 
-const CardDetailList = ({ title }) => {
+const CardDetailList = ({ contactData }) => {
   return (
     <>
       <MDBRow>
         <MDBCol size="2">
           <MDBCardTitle className="mx-4">
-            <MDBIcon icon="male"></MDBIcon>
+            <MDBIcon icon="circle"></MDBIcon>
           </MDBCardTitle>
         </MDBCol>
         <MDBCol size="10">
           <div color="light">
             <p>
-              Ronald Adonyo
+              {contactData.first_name} {contactData.last_name}
               <br />
-              Ronald.adonyo@gmail.com
+              {contactData.email}
               <br />
+              {contactData.contact_type.name}
             </p>
-            <p>Customer</p>
-              <a href="#!">Orio Systems</a>
             <p>
-              <MDBIcon
-                className="carddetailIcon"
-                icon="globe-americas"
-              ></MDBIcon>
-              <br />
-              <div class="rating">
+              <div class="rating" className="display-flex justify-space-around">
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
-              </div>Score: 5
+                {"             "}
+                <span>Score: 5</span>
+              </div>
             </p>
           </div>
         </MDBCol>

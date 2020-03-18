@@ -1,13 +1,7 @@
 import React from "react";
 import ROUTES from "../../utils/index";
 import { MDBIcon } from "mdbreact";
-// import history from "../../utils/history"
 
-// function testClickEvent() {
-//   console.log("param");
-//   history.push(ROUTES.contactDetails)
-//   // this.props.history.push(ROUTES.contactDetails);
-// }
 const data_collspan = {
   columns: [
     {

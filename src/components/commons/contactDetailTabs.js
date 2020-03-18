@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
-import SectionContainer from "../commons/sectionContainer";
-import TimelinePage from "../commons/timeline";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import { MDBCardTitle, MDBCardText } from "mdbreact";
 import "../../assets/css/main.css";
 
 export class DetailTabs extends Component {
@@ -18,104 +18,90 @@ export class DetailTabs extends Component {
   };
 
   render() {
+    const panelStyle = { width: "100%" };
     return (
-      <MDBContainer>
-        {/* <MDBContainer> */}
-          {/* <MDBRow>
-            <MDBCol md="12"> */}
-              <SectionContainer header="">
-                <MDBNav className="nav-tabs">
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "1"}
-                      onClick={this.toggle("1")}
-                      role="tab"
-                    >
-                      Activities
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "2"}
-                      onClick={this.toggle("2")}
-                      role="tab"
-                    >
-                      Emails
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "3"}
-                      onClick={this.toggle("3")}
-                      role="tab"
-                    >
-                      Deals
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "3"}
-                      onClick={this.toggle("3")}
-                      role="tab"
-                    >
-                      Tasks
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "3"}
-                      onClick={this.toggle("3")}
-                      role="tab"
-                    >
-                      Notes
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "3"}
-                      onClick={this.toggle("3")}
-                      role="tab"
-                    >
-                      Docs
-                    </MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink
-                      to="#"
-                      active={this.state.activeItem === "3"}
-                      onClick={this.toggle("3")}
-                      role="tab"
-                    >
-                      Automation
-                    </MDBNavLink>
-                  </MDBNavItem>
-                </MDBNav>
-                <MDBTabContent activeItem={this.state.activeItem}>
-                  <MDBTabPane tabId="1" role="tabpanel">
-                    <p className="mt-2">
-                      <TimelinePage />
-                    </p>
-                  </MDBTabPane>
-                  <MDBTabPane tabId="2" role="tabpanel">
-                  <p className="mt-2">
-                    </p>
-                  </MDBTabPane>
-                  <MDBTabPane tabId="3" role="tabpanel">
-                    <p className="mt-2">
-                    </p>
-                  </MDBTabPane>
-                </MDBTabContent>
-              </SectionContainer>
-            {/* </MDBCol>
-          </MDBRow>
-        </MDBContainer> */}
-      </MDBContainer>
+      <Tabs style={{height:"655px"}}>
+        <TabList className="nav-tabs">
+          <Tab>Activities</Tab>
+          <Tab>Emails</Tab>
+          <Tab>Deals</Tab>
+          <Tab>Notes</Tab>
+          <Tab>Docs</Tab>
+          <Tab>Workflows</Tab>
+          <Tab>Calls</Tab>
+          <Tab>SMS</Tab>
+        </TabList>
+        <TabPanel style={{height:"500px"}}>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Activities</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Activities tab still under construction
+            </MDBCardText>
+            <div className="flex-row">
+              <a href="">History</a>
+              <a href="" style={{ marginLeft: "1.25rem" }}>
+                Today
+              </a>
+            </div>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Emails</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Emails tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Deals</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Deals tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Notes</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Notes tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Docs</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, DOcs tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Workflows</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Workflows tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>Calls</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, Calls tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="card-body" style={panelStyle}>
+            <MDBCardTitle>SMS</MDBCardTitle>
+            <MDBCardText>
+              This a placeholder, SMS tab still under construction
+            </MDBCardText>
+          </div>
+        </TabPanel>
+      </Tabs>
     );
   }
 }

@@ -4,9 +4,6 @@ import {
   MDBRow,
   MDBCard,
   MDBCardBody,
-  MDBTable,
-  MDBTableBody,
-  MDBTableHead,
   MDBBreadcrumb,
   MDBBreadcrumbItem,
   MDBNavbar,
@@ -14,21 +11,28 @@ import {
   MDBNavItem,
   MDBDropdownToggle,
   MDBIcon,
-  MDBBtn,
+  MDBBtn
 } from "mdbreact";
 import CardList from "../commons/cardList";
-import data_collspan from "../fixtures/table";
+import ContactsTable from "../commons/dataTable";
+import all_contacts from "../fixtures/contacts";
 import "../../assets/css/main.css";
 
 export class AllContacts extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+  this.state = {
+    contact:{}
+  };
+}
   render() {
+    const {contact}= this.state;
     return (
       <>
         <div className="container">
           <MDBNavbar
             size="12"
-            className="my-4 mx-0"
+            className="my-0 mx-0"
             color="secondary"
             style={{ marginTop: "20px" }}
             dark
@@ -36,7 +40,7 @@ export class AllContacts extends Component {
             <MDBNavbarNav left>
               <MDBBreadcrumb>
                 <MDBBreadcrumbItem className="contact">
-                  Contacts [1]
+                  Contacts [{all_contacts.contacts.length}]
                 </MDBBreadcrumbItem>
                 <MDBBreadcrumbItem className="sort">
                   Sort By <span className="dateCreated">Date Created</span>{" "}
@@ -51,11 +55,14 @@ export class AllContacts extends Component {
             </MDBNavbarNav>
             <MDBNavbarNav right>
               <MDBNavItem>
-              <MDBIcon icon="sync"></MDBIcon>
+                <MDBIcon icon="sync"></MDBIcon>
                 <span className="import-angle">
                   Bulk Action <MDBIcon icon="angle-down"></MDBIcon>
-                </span>{"      "}
-                |<span className="import-angle mb-5" id="color-import">Import</span>
+                </span>
+                {"      "}|
+                <span className="import-angle mb-5" id="color-import">
+                  Import
+                </span>
                 <MDBDropdownToggle
                   outline
                   color="grey lighten-1"
@@ -70,17 +77,14 @@ export class AllContacts extends Component {
             </MDBNavbarNav>
           </MDBNavbar>
           <MDBRow>
-            <MDBCol size="8" className="my-4">
+            <MDBCol size="9" className="my-4">
               <MDBCard>
                 <MDBCardBody>
-                  <MDBTable bordered hover>
-                    <MDBTableHead columns={data_collspan.columns} textblack />
-                    <MDBTableBody rows={data_collspan.rows} />
-                  </MDBTable>
+                <ContactsTable handleClick={this.handleClick} contact={contact}/>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
-            <MDBCol size="4" className="my-4">
+            <MDBCol size="3" className="my-4">
               <CardList />
               <MDBBtn color="deep-orange">Save</MDBBtn>
               <MDBBtn outline color="deep-orange">
